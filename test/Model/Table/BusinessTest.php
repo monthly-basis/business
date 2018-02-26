@@ -75,4 +75,42 @@ class BusinessTest extends TableTestCase
             $this->businessTable->selectCount()
         );
     }
+
+    public function testSelectWhereBusinessId()
+    {
+        $this->businessTable->insert(
+            123,
+            'name',
+            'slug',
+            'description',
+            'website'
+        );
+        $array = [
+            'business_id' => '1',
+            'user_id' => '123',
+            'name' => 'name',
+            'slug' => 'slug',
+            'description' => 'description',
+            'website' => 'website',
+            'views' => '0',
+            'created' => '2018-02-26 16:21:19',
+        ];
+
+        $this->assertSame(
+            $array['business_id'],
+            $this->businessTable->selectWhereBusinessId(1)['business_id']
+        );
+        $this->assertSame(
+            $array['user_id'],
+            $this->businessTable->selectWhereBusinessId(1)['user_id']
+        );
+        $this->assertSame(
+            $array['name'],
+            $this->businessTable->selectWhereBusinessId(1)['name']
+        );
+        $this->assertSame(
+            $array['views'],
+            $this->businessTable->selectWhereBusinessId(1)['views']
+        );
+    }
 }

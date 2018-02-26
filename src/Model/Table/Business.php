@@ -114,20 +114,22 @@ class Business
         return (array) $row;
     }
 
-    public function selectWhereUserId(int $userId) : array
+    public function selectWhereBusinessId(int $businessId) : array
     {
         $sql = '
-            SELECT `user_id`
-                 , `username`
-                 , `password_hash`
-                 , `welcome_message`
+            SELECT `business_id`
+                 , `user_id`
+                 , `name`
+                 , `slug`
+                 , `description`
+                 , `website`
                  , `views`
                  , `created`
-              FROM `user`
-             WHERE `user_id` = ?
+              FROM `business`
+             WHERE `business_id` = ?
                  ;
         ';
-        return $this->adapter->query($sql)->execute([$userId])->current();
+        return $this->adapter->query($sql)->execute([$businessId])->current();
     }
 
     public function selectWhereUsername(string $username) : ArrayObject
