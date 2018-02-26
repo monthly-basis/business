@@ -6,6 +6,12 @@ use LeoGalleguillos\String\Model\Service as StringService;
 
 class Create
 {
+    /**
+     * Construct.
+     *
+     * @param BusinessTable\Business $businessTable,
+     * @param StringService\UrlFriendly $urlFriendlyService
+     */
     public function __construct(
         BusinessTable\Business $businessTable,
         StringService\UrlFriendly $urlFriendlyService
@@ -16,6 +22,11 @@ class Create
 
     /**
      * Create
+     *
+     * @param int $userId,
+     * @param string $name,
+     * @param string $description,
+     * @param string $website
      */
     public function create(
         int $userId,
