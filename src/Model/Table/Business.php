@@ -19,18 +19,22 @@ class Business
     public function insert(
         int $userId,
         string $name,
+        string $slug,
         string $description,
         string $website
     ) {
         $sql = '
             INSERT
-              INTO `business` (`user_id`, `name`, `description`, `website`, `created`)
-            VALUES (?, ?, ?, ?, UTC_TIMESTAMP())
+              INTO `business` (
+                       `user_id`, `name`, `slug`, `description`, `website`, `created`
+                   )
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP())
                  ;
         ';
         $parameters = [
             $userId,
             $name,
+            $slug,
             $description,
             $website
         ];
