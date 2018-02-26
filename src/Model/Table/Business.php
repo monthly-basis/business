@@ -70,13 +70,15 @@ class Business
     public function selectOrderByCreatedDesc() : Generator
     {
         $sql = '
-            SELECT `user_id`
-                 , `username`
-                 , `password_hash`
-                 , `welcome_message`
+            SELECT `business_id`
+                 , `user_id`
+                 , `name`
+                 , `slug`
+                 , `description`
+                 , `website`
                  , `views`
                  , `created`
-              FROM `user`
+              FROM `business`
              ORDER
                 BY `created` DESC
              LIMIT 100
@@ -85,33 +87,6 @@ class Business
         foreach ($this->adapter->query($sql)->execute() as $row) {
             yield($row);
         }
-    }
-
-    public function selectRow($usernameOrEmail)
-    {
-        $sql = '
-            SELECT `user`.`user_id`
-                 , `user`.`username`
-                 , `user`.`password_hash`
-              FROM `user`
-              JOIN `user_email`
-             USING (`user_id`)
-             WHERE `user`.`username` = ?
-                OR `user_email`.`address` = ?
-             LIMIT 1
-                 ;
-        ';
-        $parameters = [
-            $usernameOrEmail,
-            $usernameOrEmail
-        ];
-        $row = $this->adapter->query($sql, $parameters)->current();
-
-        if (empty($row)) {
-            return false;
-        }
-
-        return (array) $row;
     }
 
     public function selectWhereBusinessId(int $businessId) : array
