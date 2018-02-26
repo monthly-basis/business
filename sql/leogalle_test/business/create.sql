@@ -8,5 +8,6 @@ CREATE TABLE `business` (
     `views` int unsigned not null default 0,
     `created` datetime not null,
     PRIMARY KEY (`business_id`),
-    INDEX (`user_id`)
+    INDEX `user_id` (`user_id`),
+    INDEX `slug` (`slug`)
 ) charset=utf8;
