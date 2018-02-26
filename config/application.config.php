@@ -3,6 +3,7 @@
 return [
     'modules' => [
         'LeoGalleguillos\Business',
+        'LeoGalleguillos\String',
         'Zend\Db',
         'Zend\Router',
     ],

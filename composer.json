@@ -2,6 +2,7 @@
     "name": "leo-galleguillos/business",
     "license": "MIT",
     "require": {
+        "leo-galleguillos/string": "dev-master",
         "zendframework/zend-db": "^2.9",
         "zendframework/zend-test": "^3.1"
     },
