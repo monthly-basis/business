@@ -17,21 +17,26 @@ class Business
     }
 
     public function insert(
-        $username,
-        $passwordHash
+        int $userId,
+        string $name,
+        string $description,
+        string $website
     ) {
         $sql = '
             INSERT
-              INTO `user` (`username`, `password_hash`, `created`)
-            VALUES (?, ?, UTC_TIMESTAMP())
+              INTO `business` (`user_id`, `name`, `description`, `website`, `created`)
+            VALUES (?, ?, ?, ?, UTC_TIMESTAMP())
                  ;
         ';
         $parameters = [
-            $username,
-            $passwordHash
+            $userId,
+            $name,
+            $description,
+            $website
         ];
         return $this->adapter
-                    ->query($sql, $parameters)
+                    ->query($sql)
+                    ->execute($parameters)
                     ->getGeneratedValue();
     }
 
@@ -51,7 +56,7 @@ class Business
     {
         $sql = '
             SELECT COUNT(*) AS `count`
-              FROM `user`
+              FROM `business`
                  ;
         ';
         $row = $this->adapter->query($sql)->execute()->current();

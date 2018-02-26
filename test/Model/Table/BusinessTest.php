@@ -20,11 +20,10 @@ class BusinessTest extends TableTestCase
         $this->adapter   = new Adapter($configArray);
         $this->businessTable = new BusinessTable\Business($this->adapter);
 
-        //$this->dropTable();
-        //$this->createTable();
+        $this->dropTable();
+        $this->createTable();
     }
 
-    /**
     protected function dropTable()
     {
         $sql = file_get_contents($this->sqlPath . 'drop.sql');
@@ -36,13 +35,42 @@ class BusinessTest extends TableTestCase
         $sql = file_get_contents($this->sqlPath . 'create.sql');
         $result = $this->adapter->query($sql)->execute();
     }
-    */
 
     public function testInitialize()
     {
         $this->assertInstanceOf(
             BusinessTable\Business::class,
             $this->businessTable
+        );
+    }
+
+    public function testInsert()
+    {
+        $this->businessTable->insert(
+            123,
+            'name',
+            'description',
+            'website'
+        );
+
+        $this->businessTable->insert(
+            456,
+            'name',
+            'description',
+            'website'
+        );
+
+        $this->assertSame(
+            2,
+            $this->businessTable->selectCount()
+        );
+    }
+
+    public function testSelectCount()
+    {
+        $this->assertSame(
+            0,
+            $this->businessTable->selectCount()
         );
     }
 }
