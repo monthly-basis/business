@@ -57,7 +57,7 @@ class BusinessTest extends TableTestCase
         $this->businessTable->insert(
             456,
             'name',
-            'slug',
+            'slug2',
             'description',
             'website'
         );

@@ -9,5 +9,5 @@ CREATE TABLE `business` (
     `created` datetime not null,
     PRIMARY KEY (`business_id`),
     INDEX `user_id` (`user_id`),
-    INDEX `slug` (`slug`)
+    UNIQUE `slug` (`slug`)
 ) charset=utf8;
