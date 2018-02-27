@@ -36,9 +36,13 @@ class Business
     public function buildFromArray(array $array) : BusinessEntity\Business
     {
         $businessEntity = new BusinessEntity\Business();
-
         $businessEntity->setBusinessId($array['business_id'])
-                       ->setName($array['name']);
+                       ->setCreated(new DateTime($array['created']))
+                       ->setDescription($array['description'])
+                       ->setName($array['name'])
+                       ->setSlug($array['slug'])
+                       ->setUserId($array['user_id'])
+                       ->setWebsite($array['website']);
 
         return $businessEntity;
     }
