@@ -6,12 +6,18 @@ use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 
 class Business
 {
+    protected $businessId;
     protected $created;
     protected $description;
     protected $name;
     protected $userId;
     protected $views;
     protected $website;
+
+    public function getBusinessId() : int
+    {
+        return $this->businessId;
+    }
 
     public function getCreated() : DateTime
     {
@@ -41,6 +47,12 @@ class Business
     public function getWebsite() : string
     {
         return $this->website;
+    }
+
+    public function setBusinessId(int $businessId) : BusinessEntity\Business
+    {
+        $this->businessId = $businessId;
+        return $this;
     }
 
     public function setCreated(DateTime $created) : BusinessEntity\Business
