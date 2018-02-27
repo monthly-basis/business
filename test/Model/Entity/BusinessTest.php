@@ -22,14 +22,14 @@ class BusinessTest extends TestCase
 
     public function testGettersAndSetters()
     {
-        $userId = 123;
+        $businessId = 123;
         $this->assertSame(
             $this->businessEntity,
-            $this->businessEntity->setUserId($userId)
+            $this->businessEntity->setBusinessId($businessId)
         );
         $this->assertSame(
-            $userId,
-            $this->businessEntity->getUserId()
+            $businessId,
+            $this->businessEntity->getBusinessId()
         );
 
         $created = new DateTime();
@@ -40,6 +40,16 @@ class BusinessTest extends TestCase
         $this->assertSame(
             $created,
             $this->businessEntity->getCreated()
+        );
+
+        $userId = 123;
+        $this->assertSame(
+            $this->businessEntity,
+            $this->businessEntity->setUserId($userId)
+        );
+        $this->assertSame(
+            $userId,
+            $this->businessEntity->getUserId()
         );
 
         $website = 'https://www.example.com/';

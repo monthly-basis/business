@@ -24,11 +24,6 @@ class Business
         return $this->created;
     }
 
-    public function getUserId() : int
-    {
-        return $this->userId;
-    }
-
     public function getDescription() : string
     {
         return $this->description;
@@ -37,6 +32,11 @@ class Business
     public function getName() : string
     {
         return $this->name;
+    }
+
+    public function getUserId() : int
+    {
+        return $this->userId;
     }
 
     public function getViews() : int

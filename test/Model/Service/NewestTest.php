@@ -1,7 +1,6 @@
 <?php
 namespace LeoGalleguillos\BusinessTest\Model\Entity;
 
-use Generator;
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Service as BusinessService;
