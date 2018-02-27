@@ -107,21 +107,22 @@ class Business
         return $this->adapter->query($sql)->execute([$businessId])->current();
     }
 
-    public function selectWhereUsername(string $username) : ArrayObject
+    public function selectWhereSlug(string $slug) : array
     {
         $sql = '
-            SELECT `user_id`
-                 , `username`
-                 , `password_hash`
-                 , `welcome_message`
+            SELECT `business_id`
+                 , `user_id`
+                 , `name`
+                 , `slug`
+                 , `description`
+                 , `website`
                  , `views`
                  , `created`
-              FROM `user`
-             WHERE `username` = ?
+              FROM `business`
+             WHERE `slug` = ?
                  ;
         ';
-        $arrayObject = $this->adapter->query($sql, [$username])->current();
-        return $arrayObject;
+        return $this->adapter->query($sql)->execute([$slug])->current();
     }
 
     public function updateViewsWhereUserId(int $userId) : bool

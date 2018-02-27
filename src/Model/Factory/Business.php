@@ -18,13 +18,13 @@ class Business
         $this->businessTable = $businessTable;
     }
 
-    public function buildFromUserId(int $userId)
+    public function buildFromSlug(string $slug)
     {
-        $array = $this->userTable->selectWhereUserId(
-            $userId
+        $array = $this->businessTable->selectWhereSlug(
+            $slug
         );
 
-        return $this->buildFromArrayObject($array);
+        return $this->buildFromArray($array);
     }
 
     /**
