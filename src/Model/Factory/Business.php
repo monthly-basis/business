@@ -7,8 +7,14 @@ use LeoGalleguillos\Business\Model\Table as BusinessTable;
 
 class Business
 {
-    public function __construct(BusinessTable\Business $businessTable)
-    {
+    /**
+     * Construct.
+     *
+     * @param BusinessTable\Business $businessTable
+     */
+    public function __construct(
+        BusinessTable\Business $businessTable
+    ) {
         $this->businessTable = $businessTable;
     }
 
@@ -35,54 +41,5 @@ class Business
                        ->setName($array['name']);
 
         return $businessEntity;
-    }
-
-    /**
-     * Build from array object.
-     *
-     * @param ArrayObject $arrayObject
-     * @return UserEntity\User
-     * @deprecated Start using $this->buildFromArray(...) method instead
-     */
-    public function buildFromArrayObject($arrayObject)
-    {
-        $userEntity = new UserEntity();
-
-        $userEntity->userId   = $arrayObject['user_id'];
-        $userEntity->username = $arrayObject['username'];
-
-        if (isset($arrayObject['created'])) {
-            $userEntity->setCreated(
-                new DateTime($arrayObject['created'])
-            );
-        }
-
-        $userEntity->setViews(
-            (int) ($arrayObject['views'] ?? 0)
-        );
-        $userEntity->setWelcomeMessage(
-            (string) ($arrayObject['welcome_message'] ?? '')
-        );
-
-        return $userEntity;
-    }
-
-    /**
-     * Build from username.
-     *
-     * @param string $username
-     * @return UserEntity\User
-     */
-    public function buildFromUsername(string $username)
-    {
-        $arrayObject = $this->userTable->selectWhereUsername(
-            $username
-        );
-
-        if (empty($arrayObject)) {
-            return false;
-        }
-
-        return $this->buildFromArrayObject($arrayObject);
     }
 }
