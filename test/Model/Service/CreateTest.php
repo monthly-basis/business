@@ -1,5 +1,5 @@
 <?php
-namespace LeoGalleguillos\BusinessTest\Model\Entity;
+namespace LeoGalleguillos\BusinessTest\Model\Service;
 
 use LeoGalleguillos\Business\Model\Service as BusinessService;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
@@ -35,15 +35,14 @@ class CreateTest extends TestCase
         $this->urlFriendlyServiceMock->method('getUrlFriendly')->willReturn('slug');
         $this->businessTableMock->method('insert')->willReturn(456);
 
-        $result = $this->createService->create(
-            123,
-            'name',
-            'description',
-            'website'
-        );
-
-        $this->assertNull(
-            $result
+        $this->assertSame(
+            456,
+            $this->createService->create(
+                123,
+                'name',
+                'description',
+                'website'
+            )
         );
     }
 }

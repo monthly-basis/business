@@ -27,16 +27,17 @@ class Create
      * @param string $name,
      * @param string $description,
      * @param string $website
+     * @return int
      */
     public function create(
         int $userId,
         string $name,
         string $description,
         string $website
-    ) {
+    ) : int {
         $slug = $this->urlFriendlyService->getUrlFriendly($name);
 
-        $businessId = $this->businessTable->insert(
+        return $this->businessTable->insert(
             $userId,
             $name,
             $slug,
