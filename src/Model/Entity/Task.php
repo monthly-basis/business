@@ -33,9 +33,9 @@ class Task
         return $this->name;
     }
 
-    public function getSlug() : string
+    public function getSummary() : string
     {
-        return $this->slug;
+        return $this->summary;
     }
 
     public function getUserId() : int
@@ -72,9 +72,15 @@ class Task
         return $this;
     }
 
-    public function setSlug(string $slug) : BusinessEntity\Task
+    public function setSummary(string $summary) : BusinessEntity\Task
     {
-        $this->slug = $slug;
+        $this->summary = $summary;
+        return $this;
+    }
+
+    public function setTaskId(int $taskId) : BusinessEntity\Task
+    {
+        $this->taskId = $taskId;
         return $this;
     }
 
