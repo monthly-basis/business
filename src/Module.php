@@ -30,6 +30,11 @@ class Module
                         $serviceManager->get(BusinessTable\Business::class)
                     );
                 },
+                BusinessFactory\Task::class => function ($serviceManager) {
+                    return new BusinessFactory\Task(
+                        $serviceManager->get(BusinessTable\Task::class)
+                    );
+                },
                 BusinessService\Create::class => function ($serviceManager) {
                     return new BusinessService\Create(
                         $serviceManager->get(BusinessTable\Business::class),
@@ -45,6 +50,12 @@ class Module
                     return new BusinessService\Newest(
                         $serviceManager->get(BusinessFactory\Business::class),
                         $serviceManager->get(BusinessTable\Business::class)
+                    );
+                },
+                BusinessService\Tasks::class => function ($serviceManager) {
+                    return new BusinessService\Tasks(
+                        $serviceManager->get(BusinessFactory\Task::class),
+                        $serviceManager->get(BusinessTable\Task::class)
                     );
                 },
                 BusinessTable\Business::class => function ($serviceManager) {
