@@ -55,4 +55,28 @@ class Task
         $row = $this->adapter->query($sql)->execute()->current();
         return (int) $row['count'];
     }
+
+    public function selectWhereBusinessId(int $businessId) : Generator
+    {
+        $sql = '
+            SELECT `task_id`
+                 , `business_id`
+                 , `summary`
+                 , `description`
+                 , `views`
+                 , `created`
+              FROM `task`
+             WHERE `business_id` = :businessId
+             ORDER
+                BY `created` DESC
+             LIMIT 100
+                 ;
+        ';
+        $parameters = [
+            'businessId' => $businessId,
+        ];
+        foreach ($this->adapter->query($sql)->execute($parameters) as $row) {
+            yield($row);
+        }
+    }
 }

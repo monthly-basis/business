@@ -1,6 +1,7 @@
 <?php
 namespace LeoGalleguillos\BusinessTest\Model\Table;
 
+use Generator;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 use LeoGalleguillos\BusinessTest\TableTestCase;
 use Zend\Db\Adapter\Adapter;
@@ -69,6 +70,43 @@ class TaskTest extends TableTestCase
         $this->assertSame(
             0,
             $this->taskTable->selectCount()
+        );
+    }
+
+    public function testSelectWhereBusinessId()
+    {
+        $this->taskTable->insert(
+            123,
+            'summary1',
+            'description1'
+        );
+        $this->taskTable->insert(
+            456,
+            'summary2',
+            'description2'
+        );
+        $this->taskTable->insert(
+            123,
+            'summary3',
+            'description3'
+        );
+
+        $generator = $this->taskTable->selectWhereBusinessId(123);
+        $this->assertInstanceOf(
+            Generator::class,
+            $generator
+        );
+
+        $this->assertSame(
+            'summary1',
+            $generator->current()['summary']
+        );
+
+        $generator->next();
+
+        $this->assertSame(
+            'summary3',
+            $generator->current()['summary']
         );
     }
 }
