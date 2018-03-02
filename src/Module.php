@@ -36,6 +36,11 @@ class Module
                         $serviceManager->get(StringService\UrlFriendly::class)
                     );
                 },
+                BusinessService\Task\Create::class => function ($serviceManager) {
+                    return new BusinessService\Task\Create(
+                        $serviceManager->get(BusinessTable\Task::class)
+                    );
+                },
                 BusinessService\Newest::class => function ($serviceManager) {
                     return new BusinessService\Newest(
                         $serviceManager->get(BusinessFactory\Business::class),
@@ -44,6 +49,11 @@ class Module
                 },
                 BusinessTable\Business::class => function ($serviceManager) {
                     return new BusinessTable\Business(
+                        $serviceManager->get('main')
+                    );
+                },
+                BusinessTable\Task::class => function ($serviceManager) {
+                    return new BusinessTable\Task(
                         $serviceManager->get('main')
                     );
                 },
