@@ -1,6 +1,7 @@
 <?php
 namespace LeoGalleguillos\Business\Model\Service\Task;
 
+use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 
 class Create
