@@ -2,6 +2,7 @@
 namespace LeoGalleguillos\Business\Model\Service;
 
 use Generator;
+use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 
