@@ -18,6 +18,12 @@ class Business
         $this->businessTable = $businessTable;
     }
 
+    /**
+     * Build from slug.
+     *
+     * @param string $slug
+     * @return BusinessEntity\Business
+     */
     public function buildFromSlug(string $slug)
     {
         $array = $this->businessTable->selectWhereSlug(
@@ -47,6 +53,12 @@ class Business
         return $businessEntity;
     }
 
+    /**
+     * Build from business ID.
+     *
+     * @param int $businessId
+     * @return BusinessEntity\Business
+     */
     public function buildFromBusinessId(int $businessId)
     {
         $array = $this->businessTable->selectWhereBusinessId(
