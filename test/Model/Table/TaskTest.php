@@ -109,4 +109,18 @@ class TaskTest extends TableTestCase
             $generator->current()['summary']
         );
     }
+
+    public function testSelectWhereTaskId()
+    {
+        $this->taskTable->insert(
+            123,
+            'summary1',
+            'description1'
+        );
+        $result = $this->taskTable->selectWhereTaskId(1);
+        $this->assertSame(
+            '1',
+            $result['task_id']
+        );
+    }
 }
