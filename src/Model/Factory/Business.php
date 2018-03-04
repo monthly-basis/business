@@ -46,4 +46,13 @@ class Business
 
         return $businessEntity;
     }
+
+    public function buildFromBusinessId(int $businessId)
+    {
+        $array = $this->businessTable->selectWhereBusinessId(
+            $businessId
+        );
+
+        return $this->buildFromArray($array);
+    }
 }
