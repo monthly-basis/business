@@ -79,4 +79,23 @@ class Task
             yield($row);
         }
     }
+
+    public function selectWhereTaskId(int $taskId) : array
+    {
+        $sql = '
+            SELECT `task_id`
+                 , `business_id`
+                 , `summary`
+                 , `description`
+                 , `views`
+                 , `created`
+              FROM `task`
+             WHERE `task_id` = :taskId
+                 ;
+        ';
+        $parameters = [
+            'taskId' => $taskId,
+        ];
+        return $this->adapter->query($sql)->execute($parameters)->current();
+    }
 }
