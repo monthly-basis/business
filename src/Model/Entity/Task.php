@@ -38,6 +38,11 @@ class Task
         return $this->summary;
     }
 
+    public function getTaskId() : int
+    {
+        return $this->taskId;
+    }
+
     public function getUserId() : int
     {
         return $this->userId;
