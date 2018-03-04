@@ -46,6 +46,12 @@ class Module
                         $serviceManager->get(BusinessTable\Task::class)
                     );
                 },
+                BusinessService\Task\RootRelativeUrl::class => function ($serviceManager) {
+                    return new BusinessService\Task\RootRelativeUrl(
+                        $serviceManager->get(BusinessFactory\Business::class),
+                        $serviceManager->get(BusinessService\Task\Slug::class)
+                    );
+                },
                 BusinessService\Task\Slug::class => function ($serviceManager) {
                     return new BusinessService\Task\Slug(
                         $serviceManager->get(StringService\UrlFriendly::class)
