@@ -34,6 +34,8 @@ class RootRelativeUrl
         );
 
         return '/businesses/'
+             . $businessEntity->getSlug()
+             . '/tasks/'
              . $taskEntity->getTaskId()
              . '/'
              . $this->slugService->getSlug($taskEntity);
