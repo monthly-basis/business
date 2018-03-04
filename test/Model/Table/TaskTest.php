@@ -117,10 +117,13 @@ class TaskTest extends TableTestCase
             'summary1',
             'description1'
         );
-        $result = $this->taskTable->selectWhereTaskId(1);
         $this->assertSame(
             '1',
-            $result['task_id']
+            $result = $this->taskTable->selectWhereTaskId(1)['task_id']
+        );
+        $this->assertSame(
+            'summary1',
+            $result = $this->taskTable->selectWhereTaskId(1)['summary']
         );
     }
 }
