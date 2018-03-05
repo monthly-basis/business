@@ -56,6 +56,21 @@ class Task
         return (int) $row['count'];
     }
 
+    public function selectCountWhereBusinessId(int $businessId) : int
+    {
+        $sql = '
+            SELECT COUNT(*) AS `count`
+              FROM `task`
+             WHERE `business_id` = :businessId
+                 ;
+        ';
+        $parameters = [
+            'businessId' => $businessId,
+        ];
+        $row = $this->adapter->query($sql)->execute($parameters)->current();
+        return (int) $row['count'];
+    }
+
     public function selectWhereBusinessId(int $businessId) : Generator
     {
         $sql = '
