@@ -73,6 +73,41 @@ class TaskTest extends TableTestCase
         );
     }
 
+    public function testSelectCountWhereBusinessId()
+    {
+        $this->assertSame(
+            0,
+            $this->taskTable->selectCountWhereBusinessId(123)
+        );
+        $this->taskTable->insert(
+            123,
+            'summary1',
+            'description1'
+        );
+        $this->assertSame(
+            1,
+            $this->taskTable->selectCountWhereBusinessId(123)
+        );
+        $this->taskTable->insert(
+            123,
+            'summary1',
+            'description1'
+        );
+        $this->assertSame(
+            2,
+            $this->taskTable->selectCountWhereBusinessId(123)
+        );
+        $this->taskTable->insert(
+            456,
+            'summary1',
+            'description1'
+        );
+        $this->assertSame(
+            2,
+            $this->taskTable->selectCountWhereBusinessId(123)
+        );
+    }
+
     public function testSelectWhereBusinessId()
     {
         $this->taskTable->insert(
