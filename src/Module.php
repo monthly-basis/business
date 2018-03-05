@@ -47,6 +47,11 @@ class Module
                         $serviceManager->get(StringService\UrlFriendly::class)
                     );
                 },
+                BusinessService\Task\NumberOfTasks::class => function ($serviceManager) {
+                    return new BusinessService\Task\NumberOfTasks(
+                        $serviceManager->get(BusinessTable\Task::class)
+                    );
+                },
                 BusinessService\Task\Create::class => function ($serviceManager) {
                     return new BusinessService\Task\Create(
                         $serviceManager->get(BusinessTable\Task::class)
