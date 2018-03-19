@@ -12,7 +12,7 @@ class TaskStatusTest extends TableTestCase
     /**
      * @var string
      */
-    protected $sqlPath = __DIR__ . '/../../..' . '/sql/leogalle_test/task/';
+    protected $sqlPath = __DIR__ . '/../../..' . '/sql/leogalle_test/task_status/';
 
     protected function setUp()
     {
