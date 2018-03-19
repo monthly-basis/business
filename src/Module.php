@@ -41,6 +41,17 @@ class Module
                         $serviceManager->get(BusinessTable\Task::class)
                     );
                 },
+                BusinessService\Businesses\User\Count::class => function ($serviceManager) {
+                    return new BusinessService\Businesses\User\Count(
+                        $serviceManager->get(BusinessTable\Business::class)
+                    );
+                },
+                BusinessService\Businesses\User\Get::class => function ($serviceManager) {
+                    return new BusinessService\Businesses\User\Get(
+                        $serviceManager->get(BusinessFactory\Business::class),
+                        $serviceManager->get(BusinessTable\Business::class)
+                    );
+                },
                 BusinessService\Create::class => function ($serviceManager) {
                     return new BusinessService\Create(
                         $serviceManager->get(BusinessTable\Business::class),
