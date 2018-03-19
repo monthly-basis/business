@@ -1,6 +1,7 @@
 <?php
 namespace LeoGalleguillos\BusinessTest\Model\Table;
 
+use Generator;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 use LeoGalleguillos\BusinessTest\TableTestCase;
 use Zend\Db\Adapter\Adapter;
@@ -138,6 +139,46 @@ class BusinessTest extends TableTestCase
         $this->assertSame(
             $array['views'],
             $this->businessTable->selectWhereBusinessId(1)['views']
+        );
+    }
+
+    public function testSelectWhereUserId()
+    {
+        $this->businessTable->insert(
+            123,
+            'name',
+            'slug',
+            'description',
+            'website'
+        );
+        $this->businessTable->insert(
+            123,
+            'name2',
+            'slug2',
+            'description2',
+            'website2'
+        );
+
+        $generator = $this->businessTable->selectWhereUserId(123);
+        $this->assertInstanceOf(
+            Generator::class,
+            $generator
+        );
+
+        $array = $generator->current();
+        $this->assertSame(
+            '1',
+            $array['business_id']
+        );
+        $generator->next();
+        $array = $generator->current();
+        $this->assertSame(
+            '2',
+            $array['business_id']
+        );
+        $generator->next();
+        $this->assertNull(
+            $generator->current()
         );
     }
 }
