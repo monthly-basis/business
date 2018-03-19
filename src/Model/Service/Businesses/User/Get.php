@@ -4,6 +4,7 @@ namespace LeoGalleguillos\Business\Model\Service\Businesses\User;
 use Generator;
 use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use LeoGalleguillos\User\Model\Entity as UserEntity;
 
 class Get
 {
