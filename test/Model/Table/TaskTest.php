@@ -133,14 +133,13 @@ class TaskTest extends TableTestCase
         );
 
         $this->assertSame(
-            'summary1',
+            'summary3',
             $generator->current()['summary']
         );
 
         $generator->next();
-
         $this->assertSame(
-            'summary3',
+            'summary1',
             $generator->current()['summary']
         );
     }
