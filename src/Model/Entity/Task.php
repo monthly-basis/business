@@ -10,6 +10,7 @@ class Task
     protected $created;
     protected $description;
     protected $summary;
+    protected $taskStatusEntity;
     protected $userId;
     protected $views;
 
@@ -41,6 +42,11 @@ class Task
     public function getTaskId() : int
     {
         return $this->taskId;
+    }
+
+    public function getTaskStatusEntity() : BusinessEntity\TaskStatus
+    {
+        return $this->taskStatusEntity;
     }
 
     public function getUserId() : int
@@ -86,6 +92,13 @@ class Task
     public function setTaskId(int $taskId) : BusinessEntity\Task
     {
         $this->taskId = $taskId;
+        return $this;
+    }
+
+    public function setTaskStatusEntity(
+        BusinessEntity\TaskStatus $taskStatusEntity
+    ) : BusinessEntity\Task {
+        $this->taskStatusEntity = $taskStatusEntity;
         return $this;
     }
 

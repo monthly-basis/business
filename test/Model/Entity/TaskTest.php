@@ -52,6 +52,16 @@ class TaskTest extends TestCase
             $this->taskEntity->getTaskId()
         );
 
+        $taskStatusEntity = new BusinessEntity\TaskStatus();
+        $this->assertSame(
+            $this->taskEntity,
+            $this->taskEntity->setTaskStatusEntity($taskStatusEntity)
+        );
+        $this->assertSame(
+            $taskStatusEntity,
+            $this->taskEntity->getTaskStatusEntity()
+        );
+
         $userId = 123;
         $this->assertSame(
             $this->taskEntity,
