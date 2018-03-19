@@ -76,6 +76,33 @@ class BusinessTest extends TableTestCase
         );
     }
 
+    public function testSelectCountWhereUserId()
+    {
+        $this->assertSame(
+            0,
+            $this->businessTable->selectCountWhereUserId(123)
+        );
+
+        $this->businessTable->insert(
+            123,
+            'name',
+            'slug',
+            'description',
+            'website'
+        );
+        $this->businessTable->insert(
+            123,
+            'name2',
+            'slug2',
+            'description2',
+            'website2'
+        );
+        $this->assertSame(
+            2,
+            $this->businessTable->selectCountWhereUserId(123)
+        );
+    }
+
     public function testSelectWhereBusinessId()
     {
         $this->businessTable->insert(
