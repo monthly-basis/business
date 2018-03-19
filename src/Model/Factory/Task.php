@@ -3,6 +3,7 @@ namespace LeoGalleguillos\Business\Model\Factory;
 
 use DateTime;
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
+use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 
 class Task
@@ -13,9 +14,11 @@ class Task
      * @param BusinessTable\Task $taskTable
      */
     public function __construct(
+        BusinessFactory\TaskStatus $taskStatusFactory,
         BusinessTable\Task $taskTable
     ) {
-        $this->taskTable = $taskTable;
+        $this->taskStatusFactory = $taskStatusFactory;
+        $this->taskTable         = $taskTable;
     }
 
     public function buildFromTaskId(int $taskId)

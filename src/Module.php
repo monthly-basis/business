@@ -44,7 +44,13 @@ class Module
                 },
                 BusinessFactory\Task::class => function ($serviceManager) {
                     return new BusinessFactory\Task(
+                        $serviceManager->get(BusinessFactory\TaskStatus::class),
                         $serviceManager->get(BusinessTable\Task::class)
+                    );
+                },
+                BusinessFactory\TaskStatus::class => function ($serviceManager) {
+                    return new BusinessFactory\TaskStatus(
+                        $serviceManager->get(BusinessTable\TaskStatus::class)
                     );
                 },
                 BusinessService\Businesses\User\Count::class => function ($serviceManager) {
@@ -107,6 +113,11 @@ class Module
                 },
                 BusinessTable\Task::class => function ($serviceManager) {
                     return new BusinessTable\Task(
+                        $serviceManager->get('main')
+                    );
+                },
+                BusinessTable\TaskStatus::class => function ($serviceManager) {
+                    return new BusinessTable\TaskStatus(
                         $serviceManager->get('main')
                     );
                 },

@@ -12,10 +12,14 @@ class TaskTest extends TestCase
 {
     protected function setUp()
     {
+        $this->taskStatusFactoryMock = $this->createMock(
+            BusinessFactory\TaskStatus::class
+        );
         $this->taskTableMock = $this->createMock(
             BusinessTable\Task::class
         );
         $this->taskFactory = new BusinessFactory\Task(
+            $this->taskStatusFactoryMock,
             $this->taskTableMock
         );
     }
