@@ -78,6 +78,7 @@ class Task
                  , `business_id`
                  , `summary`
                  , `description`
+                 , `task_status_id`
                  , `views`
                  , `created`
               FROM `task`
@@ -103,6 +104,7 @@ class Task
                  , `business_id`
                  , `summary`
                  , `description`
+                 , `task_status_id`
                  , `views`
                  , `created`
               FROM `task`
