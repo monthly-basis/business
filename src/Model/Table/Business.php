@@ -153,6 +153,8 @@ class Business
                  , `created`
               FROM `business`
              WHERE `user_id` = :userId
+             ORDER
+                BY `business`.`name` ASC
                  ;
         ';
         $parameters = [
