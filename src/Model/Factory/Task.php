@@ -45,6 +45,13 @@ class Task
                    ->setSummary($array['summary'])
                    ->setTaskId($array['task_id']);
 
+        if (!empty($array['task_status_id'])) {
+            $taskStatusEntity = $this->taskStatusFactory->buildFromTaskStatusId(
+                $array['task_status_id']
+            );
+            $taskEntity->setTaskStatusEntity($taskStatusEntity);
+        }
+
         return $taskEntity;
     }
 }
