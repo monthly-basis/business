@@ -14,9 +14,15 @@ class Module
         return [
             'view_helpers' => [
                 'aliases' => [
+                    'getBusinessRootRelativeUrl' => BusinessHelper\RootRelativeUrl::class,
                     'getTaskRootRelativeUrl' => BusinessHelper\Task\RootRelativeUrl::class,
                 ],
                 'factories' => [
+                    BusinessHelper\RootRelativeUrl::class => function ($serviceManager) {
+                        return new BusinessHelper\RootRelativeUrl(
+                            $serviceManager->get(BusinessService\RootRelativeUrl::class)
+                        );
+                    },
                     BusinessHelper\Task\RootRelativeUrl::class => function ($serviceManager) {
                         return new BusinessHelper\Task\RootRelativeUrl(
                             $serviceManager->get(BusinessService\Task\RootRelativeUrl::class)
@@ -57,6 +63,9 @@ class Module
                         $serviceManager->get(BusinessTable\Business::class),
                         $serviceManager->get(StringService\UrlFriendly::class)
                     );
+                },
+                BusinessService\RootRelativeUrl::class => function ($serviceManager) {
+                    return new BusinessService\RootRelativeUrl();
                 },
                 BusinessService\Task\NumberOfTasks::class => function ($serviceManager) {
                     return new BusinessService\Task\NumberOfTasks(
