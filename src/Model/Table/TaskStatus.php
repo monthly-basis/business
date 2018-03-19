@@ -15,4 +15,19 @@ class TaskStatus
     {
         $this->adapter = $adapter;
     }
+
+    public function selectWhereTaskStatusId(int $taskStatusId) : array
+    {
+        $sql = '
+            SELECT `task_status`.`task_status_id`
+                 , `task_status`.`name`
+              FROM `task_status`
+             WHERE `task_status`.`task_status_id` = :taskStatusId
+                 ;
+        ';
+        $parameters = [
+            'taskStatusId' => $taskStatusId,
+        ];
+        return $this->adapter->query($sql)->execute($parameters)->current();
+    }
 }
