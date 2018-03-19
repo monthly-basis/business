@@ -67,6 +67,21 @@ class Business
         return (int) $row['count'];
     }
 
+    public function selectCountWhereUserId(int $userId)
+    {
+        $sql = '
+            SELECT COUNT(*) AS `count`
+              FROM `business`
+             WHERE `business`.`user_id` = :userId
+                 ;
+        ';
+        $parameters = [
+            'userId' => $userId,
+        ];
+        $row = $this->adapter->query($sql)->execute($parameters)->current();
+        return (int) $row['count'];
+    }
+
     public function selectOrderByCreatedDesc() : Generator
     {
         $sql = '
@@ -123,6 +138,29 @@ class Business
                  ;
         ';
         return $this->adapter->query($sql)->execute([$slug])->current();
+    }
+
+    public function selectWhereUserId(int $userId) : Generator
+    {
+        $sql = '
+            SELECT `business_id`
+                 , `user_id`
+                 , `name`
+                 , `slug`
+                 , `description`
+                 , `website`
+                 , `views`
+                 , `created`
+              FROM `business`
+             WHERE `user_id` = :userId
+                 ;
+        ';
+        $parameters = [
+            'userId' => $userId,
+        ];
+        foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
+            yield $array;
+        }
     }
 
     public function updateViewsWhereUserId(int $userId) : bool
