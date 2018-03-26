@@ -16,6 +16,7 @@ class Module
                 'aliases' => [
                     'getBusinessRootRelativeUrl' => BusinessHelper\RootRelativeUrl::class,
                     'getTaskRootRelativeUrl' => BusinessHelper\Task\RootRelativeUrl::class,
+                    'getTaskStatusesSelectHtml' => BusinessHelper\TaskStatus\TaskStatuses\SelectHtml::class,
                 ],
                 'factories' => [
                     BusinessHelper\RootRelativeUrl::class => function ($serviceManager) {
@@ -26,6 +27,11 @@ class Module
                     BusinessHelper\Task\RootRelativeUrl::class => function ($serviceManager) {
                         return new BusinessHelper\Task\RootRelativeUrl(
                             $serviceManager->get(BusinessService\Task\RootRelativeUrl::class)
+                        );
+                    },
+                    BusinessHelper\TaskStatus\TaskStatuses\SelectHtml::class => function ($serviceManager) {
+                        return new BusinessHelper\TaskStatus\TaskStatuses\SelectHtml(
+                            $serviceManager->get(BusinessService\TaskStatus\TaskStatuses\Get::class)
                         );
                     },
                 ],
