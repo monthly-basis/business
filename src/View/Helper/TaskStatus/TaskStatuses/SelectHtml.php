@@ -24,11 +24,11 @@ class SelectHtml extends AbstractHelper
     /**
      * Invoke
      *
-     * @param BusinessEntity\TaskStatus|null $taskStatusEntity
+     * @param BusinessEntity\TaskStatus|null $currentTaskStatusEntity
      * @return string
      */
     public function __invoke(
-        BusinessEntity\TaskStatus $taskStatusEntity = null
+        BusinessEntity\TaskStatus $currentTaskStatusEntity = null
     ) : string {
         $string = '<select name="task_status_id">' . "\n";
         foreach ($this->getService->get() as $taskStatusEntity) {
@@ -38,11 +38,15 @@ class SelectHtml extends AbstractHelper
             $optionInnerHtmlEscaped = $this->escapeHelper->__invoke(
                 $taskStatusEntity->getName()
             );
-            $optionHtml = '<option value="'
-                        . $optionValueEscaped
-                        . '">'
-                        . $optionInnerHtmlEscaped
-                        . '</option>';
+            $optionHtml  = '<option value="'
+                         . $optionValueEscaped
+                         . '"';
+            if ($taskStatusEntity == $currentTaskStatusEntity) {
+                $optionHtml .= ' selected';
+            }
+            $optionHtml .= '>'
+                         . $optionInnerHtmlEscaped
+                         . '</option>';
             $string .= $optionHtml . "\n";
         }
         $string .= '</select>';
