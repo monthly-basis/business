@@ -1,6 +1,7 @@
 <?php
 namespace LeoGalleguillos\BusinessTest\View\Helper\TaskStatus\TaskStatuses;
 
+use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Service as BusinessService;
 use LeoGalleguillos\Business\View\Helper as BusinessHelper;
 use LeoGalleguillos\String\View\Helper as StringHelper;
@@ -28,5 +29,25 @@ class SelectHtmlTest extends TestCase
             BusinessHelper\TaskStatus\TaskStatuses\SelectHtml::class,
             $this->selectHtmlHelper
         );
+    }
+
+    public function testInvoke__()
+    {
+        $this->getServiceMock->method('get')->willReturn(
+            $this->yieldTaskStatusEntities()
+        );
+        $string = $this->selectHtmlHelper->__invoke();
+        $this->assertInternalType(
+            'string',
+            $string
+        );
+    }
+
+    protected function yieldTaskStatusEntities()
+    {
+        $taskStatusEntity = new BusinessEntity\TaskStatus();
+        $taskStatusEntity->setName('Open')
+                         ->setTaskStatusId(1);
+        yield $taskStatusEntity;
     }
 }
