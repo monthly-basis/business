@@ -6,6 +6,7 @@ use LeoGalleguillos\Business\Model\Service as BusinessService;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 use LeoGalleguillos\Business\View\Helper as BusinessHelper;
 use LeoGalleguillos\String\Model\Service as StringService;
+use LeoGalleguillos\String\View\Helper as StringHelper;
 
 class Module
 {
@@ -30,8 +31,10 @@ class Module
                         );
                     },
                     BusinessHelper\TaskStatus\TaskStatuses\SelectHtml::class => function ($serviceManager) {
+                        $viewHelperManager = $serviceManager->get('ViewHelperManager');
                         return new BusinessHelper\TaskStatus\TaskStatuses\SelectHtml(
-                            $serviceManager->get(BusinessService\TaskStatus\TaskStatuses\Get::class)
+                            $serviceManager->get(BusinessService\TaskStatus\TaskStatuses\Get::class),
+                            $viewHelperManager->get(StringHelper\Escape::class)
                         );
                     },
                 ],
