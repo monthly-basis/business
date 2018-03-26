@@ -30,4 +30,19 @@ class TaskStatus
         ];
         return $this->adapter->query($sql)->execute($parameters)->current();
     }
+
+    public function select() : Generator
+    {
+        $sql = '
+            SELECT `task_status`.`task_status_id`
+                 , `task_status`.`name`
+              FROM `task_status`
+             ORDER
+                BY `task_status`.`task_status_id`
+                 ;
+        ';
+        foreach ($this->adapter->query($sql)->execute() as $array) {
+            yield $array;
+        }
+    }
 }

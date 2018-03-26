@@ -58,10 +58,10 @@ class Module
                         $serviceManager->get(BusinessTable\Business::class)
                     );
                 },
-                BusinessService\Businesses\User\Get::class => function ($serviceManager) {
-                    return new BusinessService\Businesses\User\Get(
-                        $serviceManager->get(BusinessFactory\Business::class),
-                        $serviceManager->get(BusinessTable\Business::class)
+                BusinessService\TaskStatus\TaskStatuses\Get::class => function ($serviceManager) {
+                    return new BusinessService\TaskStatus\TaskStatuses\Get(
+                        $serviceManager->get(BusinessFactory\TaskStatus::class),
+                        $serviceManager->get(BusinessTable\TaskStatus::class)
                     );
                 },
                 BusinessService\Create::class => function ($serviceManager) {
