@@ -31,6 +31,26 @@ class TaskStatus
         return $this->adapter->query($sql)->execute($parameters)->current();
     }
 
+    public function insert(
+        string $name
+    ) : int {
+        $sql = '
+            INSERT
+              INTO `task_status` (
+                      `name`
+                   )
+            VALUES (?)
+                 ;
+        ';
+        $parameters = [
+            $name,
+        ];
+        return $this->adapter
+                    ->query($sql)
+                    ->execute($parameters)
+                    ->getGeneratedValue();
+    }
+
     public function select() : Generator
     {
         $sql = '

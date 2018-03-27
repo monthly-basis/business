@@ -44,4 +44,20 @@ class TaskStatusTest extends TableTestCase
             $this->taskStatusTable
         );
     }
+
+    public function testSelectWhereTaskStatusId()
+    {
+        $this->taskStatusTable->insert(
+            'Open'
+        );
+        $array = $this->taskStatusTable->selectWhereTaskStatusId(1);
+        $this->assertSame(
+            '1',
+            $array['task_status_id']
+        );
+        $this->assertSame(
+            'Open',
+            $array['name']
+        );
+    }
 }
