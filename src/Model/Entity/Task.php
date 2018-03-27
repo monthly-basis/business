@@ -49,6 +49,11 @@ class Task
         return $this->taskStatusEntity;
     }
 
+    public function getUserEntity() : UserEntity\User
+    {
+        return $this->userEntity;
+    }
+
     public function getUserId() : int
     {
         return $this->userId;
@@ -99,6 +104,12 @@ class Task
         BusinessEntity\TaskStatus $taskStatusEntity
     ) : BusinessEntity\Task {
         $this->taskStatusEntity = $taskStatusEntity;
+        return $this;
+    }
+
+    public function setUserEntity(UserEntity\User $userEntity) : UserEntity\User
+    {
+        $this->userEntity = $userEntity;
         return $this;
     }
 

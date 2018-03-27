@@ -6,6 +6,7 @@ use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 use LeoGalleguillos\Flash\Model\Service as FlashService;
+use LeoGalleguillos\User\Model\Factory as UserFactory;
 use PHPUnit\Framework\TestCase;
 
 class TaskTest extends TestCase
@@ -18,9 +19,13 @@ class TaskTest extends TestCase
         $this->taskTableMock = $this->createMock(
             BusinessTable\Task::class
         );
+        $this->userFactoryMock = $this->createMock(
+            UserFactory\User::class
+        );
         $this->taskFactory = new BusinessFactory\Task(
             $this->taskStatusFactoryMock,
-            $this->taskTableMock
+            $this->taskTableMock,
+            $this->userFactoryMock
         );
     }
 

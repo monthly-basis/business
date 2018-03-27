@@ -7,6 +7,7 @@ use LeoGalleguillos\Business\Model\Table as BusinessTable;
 use LeoGalleguillos\Business\View\Helper as BusinessHelper;
 use LeoGalleguillos\String\Model\Service as StringService;
 use LeoGalleguillos\String\View\Helper as StringHelper;
+use LeoGalleguillos\User\Model\Factory as UserFactory;
 
 class Module
 {
@@ -60,7 +61,8 @@ class Module
                 BusinessFactory\Task::class => function ($serviceManager) {
                     return new BusinessFactory\Task(
                         $serviceManager->get(BusinessFactory\TaskStatus::class),
-                        $serviceManager->get(BusinessTable\Task::class)
+                        $serviceManager->get(BusinessTable\Task::class),
+                        $serviceManager->get(UserFactory\User::class)
                     );
                 },
                 BusinessFactory\TaskStatus::class => function ($serviceManager) {

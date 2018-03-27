@@ -5,20 +5,21 @@ use DateTime;
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use LeoGalleguillos\User\Model\Factory as UserFactory;
 
 class Task
 {
     /**
      * Construct.
-     *
-     * @param BusinessTable\Task $taskTable
      */
     public function __construct(
         BusinessFactory\TaskStatus $taskStatusFactory,
-        BusinessTable\Task $taskTable
+        BusinessTable\Task $taskTable,
+        UserFactory\User $userFactory
     ) {
         $this->taskStatusFactory = $taskStatusFactory;
         $this->taskTable         = $taskTable;
+        $this->userFactory       = $userFactory;
     }
 
     public function buildFromTaskId(int $taskId)
