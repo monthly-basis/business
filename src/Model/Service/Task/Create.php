@@ -3,6 +3,7 @@ namespace LeoGalleguillos\Business\Model\Service\Task;
 
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use LeoGalleguillos\User\Model\Entity as UserEntity;
 
 class Create
 {
@@ -27,11 +28,13 @@ class Create
      */
     public function create(
         BusinessEntity\Business $businessEntity,
+        UserEntity\User $userEntity,
         string $summary,
         string $description
     ) : int {
         return $this->taskTable->insert(
             $businessEntity->getBusinessId(),
+            $userEntity->getUserId(),
             $summary,
             $description
         );

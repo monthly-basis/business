@@ -46,6 +46,10 @@ class Task
                    ->setSummary($array['summary'])
                    ->setTaskId($array['task_id']);
 
+        $taskEntity->setUserEntity(
+            $this->userFactory->buildFromUserId($array['user_id'])
+        );
+
         if (!empty($array['task_status_id'])) {
             $taskStatusEntity = $this->taskStatusFactory->buildFromTaskStatusId(
                 $array['task_status_id']

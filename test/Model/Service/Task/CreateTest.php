@@ -5,6 +5,7 @@ use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Service as BusinessService;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 use LeoGalleguillos\String\Model\Service as StringService;
+use LeoGalleguillos\User\Model\Entity as UserEntity;
 use PHPUnit\Framework\TestCase;
 
 class CreateTest extends TestCase
@@ -34,10 +35,14 @@ class CreateTest extends TestCase
         $businessEntity = new BusinessEntity\Business();
         $businessEntity->setBusinessId(123);
 
+        $userEntity = new UserEntity\User();
+        $userEntity->setUserId(123);
+
         $this->assertSame(
             456,
             $this->createService->create(
                 $businessEntity,
+                $userEntity,
                 'summary',
                 'description'
             )

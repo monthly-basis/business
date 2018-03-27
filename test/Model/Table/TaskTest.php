@@ -49,12 +49,14 @@ class TaskTest extends TableTestCase
     {
         $this->taskTable->insert(
             123,
+            456,
             'summary',
             'description'
         );
 
         $this->taskTable->insert(
             456,
+            789,
             'summary',
             'description'
         );
@@ -81,6 +83,7 @@ class TaskTest extends TableTestCase
         );
         $this->taskTable->insert(
             123,
+            456,
             'summary1',
             'description1'
         );
@@ -90,6 +93,7 @@ class TaskTest extends TableTestCase
         );
         $this->taskTable->insert(
             123,
+            456,
             'summary1',
             'description1'
         );
@@ -99,6 +103,7 @@ class TaskTest extends TableTestCase
         );
         $this->taskTable->insert(
             456,
+            789,
             'summary1',
             'description1'
         );
@@ -112,16 +117,19 @@ class TaskTest extends TableTestCase
     {
         $this->taskTable->insert(
             123,
+            456,
             'summary1',
             'description1'
         );
         $this->taskTable->insert(
             456,
+            789,
             'summary2',
             'description2'
         );
         $this->taskTable->insert(
             123,
+            456,
             'summary3',
             'description3'
         );
@@ -148,6 +156,7 @@ class TaskTest extends TableTestCase
     {
         $this->taskTable->insert(
             123,
+            456,
             'summary1',
             'description1'
         );

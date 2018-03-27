@@ -18,19 +18,21 @@ class Task
 
     public function insert(
         int $businessId,
+        int $userId,
         string $summary,
         string $description
     ) {
         $sql = '
             INSERT
               INTO `task` (
-                   `business_id`, `summary`, `description`, `created`
+                   `business_id`, `user_id`, `summary`, `description`, `created`
                    )
-            VALUES (?, ?, ?, UTC_TIMESTAMP())
+            VALUES (?, ?, ?, ?, UTC_TIMESTAMP())
                  ;
         ';
         $parameters = [
             $businessId,
+            $userId,
             $summary,
             $description,
         ];

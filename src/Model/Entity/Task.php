@@ -3,6 +3,7 @@ namespace LeoGalleguillos\Business\Model\Entity;
 
 use DateTime;
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
+use LeoGalleguillos\User\Model\Entity as UserEntity;
 
 class Task
 {
@@ -107,7 +108,7 @@ class Task
         return $this;
     }
 
-    public function setUserEntity(UserEntity\User $userEntity) : UserEntity\User
+    public function setUserEntity(UserEntity\User $userEntity) : BusinessEntity\Task
     {
         $this->userEntity = $userEntity;
         return $this;

@@ -6,6 +6,7 @@ use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 use LeoGalleguillos\Flash\Model\Service as FlashService;
+use LeoGalleguillos\User\Model\Entity as UserEntity;
 use LeoGalleguillos\User\Model\Factory as UserFactory;
 use PHPUnit\Framework\TestCase;
 
@@ -41,19 +42,26 @@ class TaskTest extends TestCase
     {
         $array = [
             'business_id' => '2',
+            'user_id'     => '3',
             'description' => 'description',
             'summary'     => 'summary',
             'views'       => '0',
             'created'     => '2018-02-26 16:21:19',
             'task_id' => '1',
         ];
+        $userEntity = new UserEntity\User();
 
         $taskEntity = new BusinessEntity\Task();
         $taskEntity->setBusinessId($array['business_id'])
                    ->setCreated(new DateTime($array['created']))
                    ->setDescription($array['description'])
                    ->setSummary($array['summary'])
-                   ->setTaskId($array['task_id']);
+                   ->setTaskId($array['task_id'])
+                   ->setUserEntity($userEntity);
+
+        $this->userFactoryMock->method('buildFromUserId')->willReturn(
+            $userEntity
+        );
 
         $this->assertEquals(
             $taskEntity,
