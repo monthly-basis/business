@@ -34,7 +34,7 @@ class Update
         if (empty($_POST['description'])) {
             $errors[]  = 'Invalid description';
         }
-        if (empty($_POST['status_entity_id'])) {
+        if (empty($_POST['task_status_id'])) {
             $errors[]  = 'Invalid status.';
         }
 
