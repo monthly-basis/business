@@ -23,11 +23,11 @@ class Update
     /**
      * Update
      *
-     * @param BusinessEntity\Business $businessEntity
+     * @param BusinessEntity\Task $taskEntity
      * @return bool
      */
     public function update(
-        BusinessEntity\Business $businessEntity
+        BusinessEntity\Task $taskEntity
     ) : bool {
         $errors = [];
         if (empty($_POST['description'])) {
@@ -42,6 +42,15 @@ class Update
             throw new Exception('Invalid form input.');
         }
 
-        return true;
+        if ($this->taskTable->updateWhereTaskId(
+            $_POST['description'],
+            $_POST['task_status_id'],
+            $taskEntity->getTaskId()
+        )) {
+            $this->flashService->set('success', 'Task successfully updated.');
+            return true;
+        }
+
+        return false;
     }
 }

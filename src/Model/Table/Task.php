@@ -120,4 +120,24 @@ class Task
         ];
         return $this->adapter->query($sql)->execute($parameters)->current();
     }
+
+    public function updateWhereTaskId(
+        string $description,
+        int $taskStatusId,
+        int $taskId
+    ) : bool {
+        $sql = '
+            UPDATE `task`
+               SET `task`.`description` = :description,
+                   `task`.`task_status_id` = :taskStatusId
+             WHERE `task`.`task_id` = :taskId
+                 ;
+        ';
+        $parameters = [
+            'description'  => $description,
+            'taskStatusId' => $taskStatusId,
+            'taskId'       => $taskId,
+        ];
+        return (bool) $this->adapter->query($sql, $parameters)->getAffectedRows();
+    }
 }
