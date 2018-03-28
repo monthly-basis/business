@@ -78,6 +78,7 @@ class Task
         $sql = '
             SELECT `task_id`
                  , `business_id`
+                 , `user_id`
                  , `summary`
                  , `description`
                  , `task_status_id`
@@ -104,6 +105,7 @@ class Task
         $sql = '
             SELECT `task_id`
                  , `business_id`
+                 , `user_id`
                  , `summary`
                  , `description`
                  , `task_status_id`
