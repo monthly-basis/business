@@ -5,6 +5,7 @@ use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Service as BusinessService;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 use LeoGalleguillos\Business\View\Helper as BusinessHelper;
+use LeoGalleguillos\Flash\Model\Service as FlashService;
 use LeoGalleguillos\String\Model\Service as StringService;
 use LeoGalleguillos\String\View\Helper as StringHelper;
 use LeoGalleguillos\User\Model\Factory as UserFactory;
@@ -120,6 +121,12 @@ class Module
                 BusinessService\Task\Slug::class => function ($serviceManager) {
                     return new BusinessService\Task\Slug(
                         $serviceManager->get(StringService\UrlFriendly::class)
+                    );
+                },
+                BusinessService\Task\Update::class => function ($serviceManager) {
+                    return new BusinessService\Task\Update(
+                        $serviceManager->get(BusinessTable\Task::class),
+                        $serviceManager->get(FlashService\Flash::class)
                     );
                 },
                 BusinessService\Newest::class => function ($serviceManager) {
