@@ -121,6 +121,20 @@ class Task
         return $this->adapter->query($sql)->execute($parameters)->current();
     }
 
+    public function updateViewsWhereTaskId(int $taskId) : bool
+    {
+        $sql = '
+            UPDATE `task`
+               SET `task`.`views` = `task`.`views` + 1
+             WHERE `task`.`task_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $taskId
+        ];
+        return (bool) $this->adapter->query($sql, $parameters)->getAffectedRows();
+    }
+
     public function updateWhereTaskId(
         string $description,
         int $taskStatusId,
