@@ -18,6 +18,7 @@ class Module
             'view_helpers' => [
                 'aliases' => [
                     'getBusinessRootRelativeUrl' => BusinessHelper\RootRelativeUrl::class,
+                    'getTaskRootRelativeCommentUrl' => BusinessHelper\Task\RootRelativeCommentUrl::class,
                     'getTaskRootRelativeEditUrl' => BusinessHelper\Task\RootRelativeEditUrl::class,
                     'getTaskRootRelativeUrl' => BusinessHelper\Task\RootRelativeUrl::class,
                     'getTaskStatusesSelectHtml' => BusinessHelper\TaskStatus\TaskStatuses\SelectHtml::class,
@@ -26,6 +27,11 @@ class Module
                     BusinessHelper\RootRelativeUrl::class => function ($serviceManager) {
                         return new BusinessHelper\RootRelativeUrl(
                             $serviceManager->get(BusinessService\RootRelativeUrl::class)
+                        );
+                    },
+                    BusinessHelper\Task\RootRelativeCommentUrl::class => function ($serviceManager) {
+                        return new BusinessHelper\Task\RootRelativeCommentUrl(
+                            $serviceManager->get(BusinessService\Task\RootRelativeCommentUrl::class)
                         );
                     },
                     BusinessHelper\Task\RootRelativeEditUrl::class => function ($serviceManager) {
@@ -105,6 +111,11 @@ class Module
                 BusinessService\Task\Create::class => function ($serviceManager) {
                     return new BusinessService\Task\Create(
                         $serviceManager->get(BusinessTable\Task::class)
+                    );
+                },
+                BusinessService\Task\RootRelativeCommentUrl::class => function ($serviceManager) {
+                    return new BusinessService\Task\RootRelativeCommentUrl(
+                        $serviceManager->get(BusinessFactory\Business::class)
                     );
                 },
                 BusinessService\Task\RootRelativeEditUrl::class => function ($serviceManager) {
