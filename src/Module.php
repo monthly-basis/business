@@ -113,6 +113,11 @@ class Module
                         $serviceManager->get(BusinessTable\Task::class)
                     );
                 },
+                BusinessService\Task\IncrementViews::class => function ($serviceManager) {
+                    return new BusinessService\Task\IncrementViews(
+                        $serviceManager->get(BusinessTable\Task::class)
+                    );
+                },
                 BusinessService\Task\RootRelativeCommentUrl::class => function ($serviceManager) {
                     return new BusinessService\Task\RootRelativeCommentUrl(
                         $serviceManager->get(BusinessFactory\Business::class)
