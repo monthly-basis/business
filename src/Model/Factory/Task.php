@@ -44,7 +44,8 @@ class Task
                    ->setCreated(new DateTime($array['created']))
                    ->setDescription($array['description'])
                    ->setSummary($array['summary'])
-                   ->setTaskId($array['task_id']);
+                   ->setTaskId($array['task_id'])
+                   ->setViews((int) $array['views']);
 
         $taskEntity->setUserEntity(
             $this->userFactory->buildFromUserId($array['user_id'])
