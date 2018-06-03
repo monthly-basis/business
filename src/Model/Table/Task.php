@@ -76,20 +76,20 @@ class Task
     public function selectWhereBusinessId(int $businessId) : Generator
     {
         $sql = '
-            SELECT `task_id`
-                 , `business_id`
-                 , `user_id`
-                 , `summary`
-                 , `description`
-                 , `task_status_id`
-                 , `views`
-                 , `created`
+            SELECT `task`.`task_id`
+                 , `task`.`business_id`
+                 , `task`.`user_id`
+                 , `task`.`summary`
+                 , `task`.`description`
+                 , `task`.`task_status_id`
+                 , `task`.`views`
+                 , `task`.`created`
               FROM `task`
-             WHERE `business_id` = :businessId
+             WHERE `task`.`business_id` = :businessId
              ORDER
-                BY `task_status_id` ASC
-                 , `created` DESC
-                 , `task_id` DESC
+                BY `task`.`task_status_id` ASC
+                 , `task`.`created` DESC
+                 , `task`.`task_id` DESC
              LIMIT 100
                  ;
         ';
