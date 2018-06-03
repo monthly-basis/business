@@ -87,8 +87,9 @@ class Task
               FROM `task`
              WHERE `business_id` = :businessId
              ORDER
-                BY `created` DESC,
-                   `task_id` DESC
+                BY `task_status_id` ASC
+                 , `created` DESC
+                 , `task_id` DESC
              LIMIT 100
                  ;
         ';
