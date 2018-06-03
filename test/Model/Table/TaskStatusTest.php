@@ -50,6 +50,10 @@ class TaskStatusTest extends TableTestCase
         $this->taskStatusTable->insert(
             'Open'
         );
+        $this->taskStatusTable->insert(
+            'In Progress'
+        );
+
         $array = $this->taskStatusTable->selectWhereTaskStatusId(1);
         $this->assertSame(
             '1',
@@ -57,6 +61,16 @@ class TaskStatusTest extends TableTestCase
         );
         $this->assertSame(
             'Open',
+            $array['name']
+        );
+
+        $array = $this->taskStatusTable->selectWhereTaskStatusId(2);
+        $this->assertSame(
+            '2',
+            $array['task_status_id']
+        );
+        $this->assertSame(
+            'In Progress',
             $array['name']
         );
     }
