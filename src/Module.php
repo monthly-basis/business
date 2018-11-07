@@ -161,17 +161,17 @@ class Module
                 },
                 BusinessTable\Business::class => function ($serviceManager) {
                     return new BusinessTable\Business(
-                        $serviceManager->get('main')
+                        $serviceManager->get('business')
                     );
                 },
                 BusinessTable\Task::class => function ($serviceManager) {
                     return new BusinessTable\Task(
-                        $serviceManager->get('main')
+                        $serviceManager->get('business')
                     );
                 },
                 BusinessTable\TaskStatus::class => function ($serviceManager) {
                     return new BusinessTable\TaskStatus(
-                        $serviceManager->get('main')
+                        $serviceManager->get('business')
                     );
                 },
             ],
