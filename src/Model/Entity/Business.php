@@ -34,11 +34,6 @@ class Business
         return $this->name;
     }
 
-    public function getSlug() : string
-    {
-        return $this->slug;
-    }
-
     public function getUserId() : int
     {
         return $this->userId;
@@ -75,12 +70,6 @@ class Business
     public function setName(string $name) : BusinessEntity\Business
     {
         $this->name = $name;
-        return $this;
-    }
-
-    public function setSlug(string $slug) : BusinessEntity\Business
-    {
-        $this->slug = $slug;
         return $this;
     }
 

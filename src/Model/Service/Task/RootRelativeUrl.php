@@ -7,11 +7,6 @@ use LeoGalleguillos\Business\Model\Service as BusinessService;
 
 class RootRelativeUrl
 {
-    /**
-     * Construct.
-     *
-     * @param BusinessService\Task\Slug $slugService
-     */
     public function __construct(
         BusinessFactory\Business $businessFactory,
         BusinessService\Task\Slug $slugService

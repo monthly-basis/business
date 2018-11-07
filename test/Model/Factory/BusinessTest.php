@@ -34,7 +34,6 @@ class UserTest extends TestCase
             'business_id' => '1',
             'user_id'     => '123',
             'name'        => 'name',
-            'slug'        => 'slug',
             'description' => 'description',
             'website'     => 'website',
             'views'       => '0',
@@ -46,7 +45,6 @@ class UserTest extends TestCase
                        ->setCreated(new DateTime($array['created']))
                        ->setDescription($array['description'])
                        ->setName($array['name'])
-                       ->setSlug($array['slug'])
                        ->setUserId($array['user_id'])
                        ->setWebsite($array['website']);
 

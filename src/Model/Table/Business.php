@@ -19,22 +19,20 @@ class Business
     public function insert(
         int $userId,
         string $name,
-        string $slug,
         string $description,
         string $website
     ) {
         $sql = '
             INSERT
               INTO `business` (
-                       `user_id`, `name`, `slug`, `description`, `website`, `created`
+                       `user_id`, `name`, `description`, `website`, `created`
                    )
-            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP())
+            VALUES (?, ?, ?, ?, UTC_TIMESTAMP())
                  ;
         ';
         $parameters = [
             $userId,
             $name,
-            $slug,
             $description,
             $website
         ];
@@ -88,7 +86,6 @@ class Business
             SELECT `business_id`
                  , `user_id`
                  , `name`
-                 , `slug`
                  , `description`
                  , `website`
                  , `views`
@@ -110,7 +107,6 @@ class Business
             SELECT `business_id`
                  , `user_id`
                  , `name`
-                 , `slug`
                  , `description`
                  , `website`
                  , `views`
@@ -122,31 +118,12 @@ class Business
         return $this->adapter->query($sql)->execute([$businessId])->current();
     }
 
-    public function selectWhereSlug(string $slug) : array
-    {
-        $sql = '
-            SELECT `business_id`
-                 , `user_id`
-                 , `name`
-                 , `slug`
-                 , `description`
-                 , `website`
-                 , `views`
-                 , `created`
-              FROM `business`
-             WHERE `slug` = ?
-                 ;
-        ';
-        return $this->adapter->query($sql)->execute([$slug])->current();
-    }
-
     public function selectWhereUserId(int $userId) : Generator
     {
         $sql = '
             SELECT `business_id`
                  , `user_id`
                  , `name`
-                 , `slug`
                  , `description`
                  , `website`
                  , `views`

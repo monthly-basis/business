@@ -50,7 +50,6 @@ class BusinessTest extends TableTestCase
         $this->businessTable->insert(
             123,
             'name',
-            'slug',
             'description',
             'website'
         );
@@ -58,7 +57,6 @@ class BusinessTest extends TableTestCase
         $this->businessTable->insert(
             456,
             'name',
-            'slug2',
             'description',
             'website'
         );
@@ -87,14 +85,12 @@ class BusinessTest extends TableTestCase
         $this->businessTable->insert(
             123,
             'name',
-            'slug',
             'description',
             'website'
         );
         $this->businessTable->insert(
             123,
             'name2',
-            'slug2',
             'description2',
             'website2'
         );
@@ -109,7 +105,6 @@ class BusinessTest extends TableTestCase
         $this->businessTable->insert(
             123,
             'name',
-            'slug',
             'description',
             'website'
         );
@@ -117,7 +112,6 @@ class BusinessTest extends TableTestCase
             'business_id' => '1',
             'user_id' => '123',
             'name' => 'name',
-            'slug' => 'slug',
             'description' => 'description',
             'website' => 'website',
             'views' => '0',
@@ -147,14 +141,12 @@ class BusinessTest extends TableTestCase
         $this->businessTable->insert(
             123,
             'name',
-            'slug',
             'description',
             'website'
         );
         $this->businessTable->insert(
             123,
             'name2',
-            'slug2',
             'description2',
             'website2'
         );

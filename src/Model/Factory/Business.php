@@ -19,21 +19,6 @@ class Business
     }
 
     /**
-     * Build from slug.
-     *
-     * @param string $slug
-     * @return BusinessEntity\Business
-     */
-    public function buildFromSlug(string $slug)
-    {
-        $array = $this->businessTable->selectWhereSlug(
-            $slug
-        );
-
-        return $this->buildFromArray($array);
-    }
-
-    /**
      * Build from array.
      *
      * @param array $array
@@ -46,7 +31,6 @@ class Business
                        ->setCreated(new DateTime($array['created']))
                        ->setDescription($array['description'])
                        ->setName($array['name'])
-                       ->setSlug($array['slug'])
                        ->setUserId($array['user_id'])
                        ->setWebsite($array['website']);
 

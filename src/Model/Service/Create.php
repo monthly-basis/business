@@ -35,12 +35,9 @@ class Create
         string $description,
         string $website
     ) : int {
-        $slug = $this->urlFriendlyService->getUrlFriendly($name);
-
         return $this->businessTable->insert(
             $userId,
             $name,
-            $slug,
             $description,
             $website
         );
