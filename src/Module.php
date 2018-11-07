@@ -100,8 +100,10 @@ class Module
                         $serviceManager->get(StringService\UrlFriendly::class)
                     );
                 },
-                BusinessService\RootRelativeUrl::class => function ($serviceManager) {
-                    return new BusinessService\RootRelativeUrl();
+                BusinessService\RootRelativeUrl::class => function ($sm) {
+                    return new BusinessService\RootRelativeUrl(
+                        $sm->get(StringService\UrlFriendly::class)
+                    );
                 },
                 BusinessService\Task\NumberOfTasks::class => function ($serviceManager) {
                     return new BusinessService\Task\NumberOfTasks(

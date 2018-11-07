@@ -2,19 +2,22 @@
 namespace LeoGalleguillos\Business\Model\Service;
 
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
+use LeoGalleguillos\String\Model\Service as StringService;
 
 class RootRelativeUrl
 {
-    /**
-     * Get root relative URL.
-     *
-     * @param BusinessEntity\Business $businessEntity
-     * @return string
-     */
+    public function __construct(
+        StringService\UrlFriendly $urlFriendlyService
+    ) {
+        $this->urlFriendlyService = $urlFriendlyService;
+    }
+
     public function getRootRelativeUrl(
         BusinessEntity\Business $businessEntity
-    ) : string {
+    ): string {
         return '/businesses/'
-             . $businessEntity->getSlug();
+             . $businessEntity->getBusinessId()
+             . '/'
+             . $this->urlFriendlyService->getUrlFriendly($businessEntity->getName());
     }
 }
