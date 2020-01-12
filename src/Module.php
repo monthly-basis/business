@@ -20,7 +20,6 @@ class Module
                     'getBusinessRootRelativeUrl' => BusinessHelper\RootRelativeUrl::class,
                     'getTaskRootRelativeCommentUrl' => BusinessHelper\Task\RootRelativeCommentUrl::class,
                     'getTaskRootRelativeEditUrl' => BusinessHelper\Task\RootRelativeEditUrl::class,
-                    'getTaskRootRelativeUrl' => BusinessHelper\Task\RootRelativeUrl::class,
                     'getTaskStatusesSelectHtml' => BusinessHelper\TaskStatus\TaskStatuses\SelectHtml::class,
                 ],
                 'factories' => [
@@ -37,11 +36,6 @@ class Module
                     BusinessHelper\Task\RootRelativeEditUrl::class => function ($serviceManager) {
                         return new BusinessHelper\Task\RootRelativeEditUrl(
                             $serviceManager->get(BusinessService\Task\RootRelativeEditUrl::class)
-                        );
-                    },
-                    BusinessHelper\Task\RootRelativeUrl::class => function ($serviceManager) {
-                        return new BusinessHelper\Task\RootRelativeUrl(
-                            $serviceManager->get(BusinessService\Task\RootRelativeUrl::class)
                         );
                     },
                     BusinessHelper\TaskStatus\TaskStatuses\SelectHtml::class => function ($serviceManager) {
@@ -128,12 +122,6 @@ class Module
                 BusinessService\Task\RootRelativeEditUrl::class => function ($serviceManager) {
                     return new BusinessService\Task\RootRelativeEditUrl(
                         $serviceManager->get(BusinessFactory\Business::class)
-                    );
-                },
-                BusinessService\Task\RootRelativeUrl::class => function ($serviceManager) {
-                    return new BusinessService\Task\RootRelativeUrl(
-                        $serviceManager->get(BusinessFactory\Business::class),
-                        $serviceManager->get(BusinessService\Task\Slug::class)
                     );
                 },
                 BusinessService\Task\Slug::class => function ($serviceManager) {
