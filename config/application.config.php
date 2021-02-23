@@ -6,7 +6,7 @@ return [
         'Laminas\Router',
         'LeoGalleguillos\Business',
         'MonthlyBasis\Flash',
-        'LeoGalleguillos\String',
+        'MonthlyBasis\String',
         'LeoGalleguillos\User',
     ],
     // These are various options for the listeners attached to the ModuleManager

@@ -3,7 +3,7 @@ namespace LeoGalleguillos\BusinessTest\Model\Service;
 
 use LeoGalleguillos\Business\Model\Service as BusinessService;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
-use LeoGalleguillos\String\Model\Service as StringService;
+use MonthlyBasis\String\Model\Service as StringService;
 use PHPUnit\Framework\TestCase;
 
 class CreateTest extends TestCase

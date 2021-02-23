@@ -3,7 +3,7 @@ namespace LeoGalleguillos\Business\View\Helper\TaskStatus\TaskStatuses;
 
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Service as BusinessService;
-use LeoGalleguillos\String\View\Helper as StringHelper;
+use MonthlyBasis\String\View\Helper as StringHelper;
 use Laminas\View\Helper\AbstractHelper;
 
 class SelectHtml extends AbstractHelper

@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\Business\Model\Service;
 
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
-use LeoGalleguillos\String\Model\Service as StringService;
+use MonthlyBasis\String\Model\Service as StringService;
 
 class RootRelativeUrl
 {

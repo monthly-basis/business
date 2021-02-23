@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\Business\Model\Service;
 
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
-use LeoGalleguillos\String\Model\Service as StringService;
+use MonthlyBasis\String\Model\Service as StringService;
 
 class Create
 {
