@@ -6,8 +6,8 @@ use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 use MonthlyBasis\Flash\Model\Service as FlashService;
-use LeoGalleguillos\User\Model\Entity as UserEntity;
-use LeoGalleguillos\User\Model\Factory as UserFactory;
+use MonthlyBasis\User\Model\Entity as UserEntity;
+use MonthlyBasis\User\Model\Factory as UserFactory;
 use PHPUnit\Framework\TestCase;
 
 class TaskTest extends TestCase

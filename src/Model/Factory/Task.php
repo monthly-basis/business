@@ -5,7 +5,7 @@ use DateTime;
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
-use LeoGalleguillos\User\Model\Factory as UserFactory;
+use MonthlyBasis\User\Model\Factory as UserFactory;
 
 class Task
 {

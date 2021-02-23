@@ -5,7 +5,7 @@ use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Service as BusinessService;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
-use LeoGalleguillos\User\Model\Entity as UserEntity;
+use MonthlyBasis\User\Model\Entity as UserEntity;
 use PHPUnit\Framework\TestCase;
 
 class GetTest extends TestCase

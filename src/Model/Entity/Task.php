@@ -3,7 +3,7 @@ namespace LeoGalleguillos\Business\Model\Entity;
 
 use DateTime;
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
-use LeoGalleguillos\User\Model\Entity as UserEntity;
+use MonthlyBasis\User\Model\Entity as UserEntity;
 
 class Task
 {

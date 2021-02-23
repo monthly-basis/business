@@ -8,7 +8,7 @@ use LeoGalleguillos\Business\View\Helper as BusinessHelper;
 use MonthlyBasis\Flash\Model\Service as FlashService;
 use MonthlyBasis\String\Model\Service as StringService;
 use MonthlyBasis\String\View\Helper as StringHelper;
-use LeoGalleguillos\User\Model\Factory as UserFactory;
+use MonthlyBasis\User\Model\Factory as UserFactory;
 
 class Module
 {

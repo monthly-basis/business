@@ -7,7 +7,7 @@
         "monthly-basis/flash": "^2.0",
         "monthly-basis/laminas-test": "^2.0",
         "monthly-basis/string": "^3.0",
-        "leo-galleguillos/user": "^1.0"
+        "monthly-basis/user": "^2.0"
     },
     "autoload": {
         "psr-4": {
