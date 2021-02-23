@@ -3,7 +3,7 @@ namespace LeoGalleguillos\Business\View\Helper\Task;
 
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Service as BusinessService;
-use Zend\View\Helper\AbstractHelper;
+use Laminas\View\Helper\AbstractHelper;
 
 class RootRelativeEditUrl extends AbstractHelper
 {

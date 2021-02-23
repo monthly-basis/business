@@ -4,7 +4,7 @@ namespace LeoGalleguillos\BusinessTest\Model\Table;
 use Generator;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 use LeoGalleguillos\BusinessTest\TableTestCase;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 use PHPUnit\Framework\TestCase;
 
 class TaskTest extends TableTestCase
