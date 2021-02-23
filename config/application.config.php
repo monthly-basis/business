@@ -5,7 +5,7 @@ return [
         'Laminas\Db',
         'Laminas\Router',
         'LeoGalleguillos\Business',
-        'LeoGalleguillos\Flash',
+        'MonthlyBasis\Flash',
         'LeoGalleguillos\String',
         'LeoGalleguillos\User',
     ],

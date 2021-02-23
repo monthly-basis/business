@@ -4,7 +4,7 @@ namespace LeoGalleguillos\Business\Model\Service\Task;
 use Exception;
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
-use LeoGalleguillos\Flash\Model\Service as FlashService;
+use MonthlyBasis\Flash\Model\Service as FlashService;
 
 class Update
 {

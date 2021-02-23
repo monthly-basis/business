@@ -5,7 +5,7 @@ use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Service as BusinessService;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
 use LeoGalleguillos\Business\View\Helper as BusinessHelper;
-use LeoGalleguillos\Flash\Model\Service as FlashService;
+use MonthlyBasis\Flash\Model\Service as FlashService;
 use LeoGalleguillos\String\Model\Service as StringService;
 use LeoGalleguillos\String\View\Helper as StringHelper;
 use LeoGalleguillos\User\Model\Factory as UserFactory;

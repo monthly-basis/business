@@ -4,7 +4,7 @@ namespace LeoGalleguillos\BusinessTest\Model\Factory;
 use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
 use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
-use LeoGalleguillos\Flash\Model\Service as FlashService;
+use MonthlyBasis\Flash\Model\Service as FlashService;
 use PHPUnit\Framework\TestCase;
 
 class TaskStatusTest extends TestCase
