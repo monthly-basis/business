@@ -3,7 +3,7 @@ namespace LeoGalleguillos\BusinessTest\Model\Table;
 
 use Generator;
 use LeoGalleguillos\Business\Model\Table as BusinessTable;
-use LeoGalleguillos\Test\TableTestCase;
+use MonthlyBasis\LaminasTest\TableTestCase;
 
 class BusinessTest extends TableTestCase
 {

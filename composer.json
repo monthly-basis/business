@@ -5,8 +5,8 @@
         "laminas/laminas-db": "^2.9",
         "laminas/laminas-test": "^3.1",
         "monthly-basis/flash": "^2.0",
+        "monthly-basis/laminas-test": "^2.0",
         "monthly-basis/string": "^3.0",
-        "leo-galleguillos/test": "^1.0",
         "leo-galleguillos/user": "^1.0"
     },
     "autoload": {
