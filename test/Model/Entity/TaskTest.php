@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class TaskTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->taskEntity = new BusinessEntity\Task();
     }

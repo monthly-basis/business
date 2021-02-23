@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class SelectHtmlTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->getServiceMock = $this->createMock(
             BusinessService\TaskStatus\TaskStatuses\Get::class
@@ -37,8 +37,7 @@ class SelectHtmlTest extends TestCase
             $this->yieldTaskStatusEntities()
         );
         $string = $this->selectHtmlHelper->__invoke();
-        $this->assertInternalType(
-            'string',
+        $this->assertIsString(
             $string
         );
     }

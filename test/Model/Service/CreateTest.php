@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class CreateTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->businessTableMock = $this->createMock(
             BusinessTable\Business::class

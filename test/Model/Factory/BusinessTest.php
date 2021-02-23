@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->businessTableMock = $this->createMock(
             BusinessTable\Business::class

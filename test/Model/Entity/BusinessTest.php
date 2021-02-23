@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class BusinessTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->businessEntity = new BusinessEntity\Business();
     }

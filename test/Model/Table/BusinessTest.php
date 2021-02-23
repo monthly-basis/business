@@ -7,7 +7,7 @@ use LeoGalleguillos\Test\TableTestCase;
 
 class BusinessTest extends TableTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->businessTable = new BusinessTable\Business($this->getAdapter());
 

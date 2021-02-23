@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class GetTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->taskStatusFactoryMock = $this->createMock(
             BusinessFactory\TaskStatus::class

@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class TaskStatusTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->taskStatusTableMock = $this->createMock(
             BusinessTable\TaskStatus::class

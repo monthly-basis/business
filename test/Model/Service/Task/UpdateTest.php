@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class UpdateTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->taskTableMock = $this->createMock(
             BusinessTable\Task::class

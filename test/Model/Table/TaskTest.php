@@ -14,7 +14,7 @@ class TaskTest extends TableTestCase
      */
     protected $sqlPath = __DIR__ . '/../../..' . '/sql/leogalle_test/task/';
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $configArray     = require(__DIR__ . '/../../../config/autoload/local.php');
         $configArray     = $configArray['db']['adapters']['leogalle_test'];
