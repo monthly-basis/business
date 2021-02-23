@@ -1,10 +1,10 @@
 <?php
-namespace LeoGalleguillos\BusinessTest\Model\Entity;
+namespace MonthlyBasis\BusinessTest\Model\Entity;
 
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
-use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
-use LeoGalleguillos\Business\Model\Service as BusinessService;
-use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Factory as BusinessFactory;
+use MonthlyBasis\Business\Model\Service as BusinessService;
+use MonthlyBasis\Business\Model\Table as BusinessTable;
 use PHPUnit\Framework\TestCase;
 
 class NewestTest extends TestCase

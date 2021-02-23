@@ -1,7 +1,7 @@
 <?php
-namespace LeoGalleguillos\Business\Model\Service;
+namespace MonthlyBasis\Business\Model\Service;
 
-use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use MonthlyBasis\Business\Model\Table as BusinessTable;
 use MonthlyBasis\String\Model\Service as StringService;
 
 class Create

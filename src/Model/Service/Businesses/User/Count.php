@@ -1,7 +1,7 @@
 <?php
-namespace LeoGalleguillos\Business\Model\Service\Businesses\User;
+namespace MonthlyBasis\Business\Model\Service\Businesses\User;
 
-use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use MonthlyBasis\Business\Model\Table as BusinessTable;
 use MonthlyBasis\User\Model\Entity as UserEntity;
 
 class Count

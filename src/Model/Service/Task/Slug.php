@@ -1,7 +1,7 @@
 <?php
-namespace LeoGalleguillos\Business\Model\Service\Task;
+namespace MonthlyBasis\Business\Model\Service\Task;
 
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
 use MonthlyBasis\String\Model\Service as StringService;
 
 class Slug

@@ -1,7 +1,7 @@
 <?php
-namespace LeoGalleguillos\Business\Model\Service;
+namespace MonthlyBasis\Business\Model\Service;
 
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
 use MonthlyBasis\String\Model\Service as StringService;
 
 class RootRelativeUrl

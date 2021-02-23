@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0d81d6f0044081b655711a7d8386c5f",
+    "content-hash": "a74cd81de0a9797f18ab1223917db8dc",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -208,6 +208,7 @@
                 "console",
                 "laminas"
             ],
+            "abandoned": "laminas/laminas-cli",
             "time": "2019-12-31T16:31:45+00:00"
         },
         {

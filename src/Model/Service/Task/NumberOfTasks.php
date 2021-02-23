@@ -1,8 +1,8 @@
 <?php
-namespace LeoGalleguillos\Business\Model\Service\Task;
+namespace MonthlyBasis\Business\Model\Service\Task;
 
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
-use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Table as BusinessTable;
 
 class NumberOfTasks
 {

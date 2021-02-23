@@ -1,8 +1,8 @@
 <?php
-namespace LeoGalleguillos\BusinessTest\Model\Table;
+namespace MonthlyBasis\BusinessTest\Model\Table;
 
 use Generator;
-use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use MonthlyBasis\Business\Model\Table as BusinessTable;
 use MonthlyBasis\LaminasTest\TableTestCase;
 
 class BusinessTest extends TableTestCase

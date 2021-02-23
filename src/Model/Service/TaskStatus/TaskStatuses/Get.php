@@ -1,10 +1,10 @@
 <?php
-namespace LeoGalleguillos\Business\Model\Service\TaskStatus\TaskStatuses;
+namespace MonthlyBasis\Business\Model\Service\TaskStatus\TaskStatuses;
 
 use Generator;
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
-use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
-use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Factory as BusinessFactory;
+use MonthlyBasis\Business\Model\Table as BusinessTable;
 
 class Get
 {

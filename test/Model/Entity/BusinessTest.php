@@ -1,8 +1,8 @@
 <?php
-namespace LeoGalleguillos\BusinessTest\Model\Entity;
+namespace MonthlyBasis\BusinessTest\Model\Entity;
 
 use DateTime;
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
 use PHPUnit\Framework\TestCase;
 
 class BusinessTest extends TestCase

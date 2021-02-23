@@ -1,5 +1,5 @@
 {
-    "name": "leo-galleguillos/business",
+    "name": "monthly-basis/business",
     "license": "MIT",
     "require": {
         "laminas/laminas-db": "^2.9",
@@ -11,8 +11,8 @@
     },
     "autoload": {
         "psr-4": {
-            "LeoGalleguillos\\Business\\": "src/",
-            "LeoGalleguillos\\BusinessTest\\": "test/"
+            "MonthlyBasis\\Business\\": "src/",
+            "MonthlyBasis\\BusinessTest\\": "test/"
         }
     }
 }

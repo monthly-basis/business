@@ -1,8 +1,8 @@
 <?php
-namespace LeoGalleguillos\Business\View\Helper;
+namespace MonthlyBasis\Business\View\Helper;
 
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
-use LeoGalleguillos\Business\Model\Service as BusinessService;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Service as BusinessService;
 use Laminas\View\Helper\AbstractHelper;
 
 class RootRelativeUrl extends AbstractHelper

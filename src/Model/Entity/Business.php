@@ -1,8 +1,8 @@
 <?php
-namespace LeoGalleguillos\Business\Model\Entity;
+namespace MonthlyBasis\Business\Model\Entity;
 
 use DateTime;
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
 
 class Business
 {

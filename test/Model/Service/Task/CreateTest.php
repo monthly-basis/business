@@ -1,9 +1,9 @@
 <?php
-namespace LeoGalleguillos\BusinessTest\Service\Task;
+namespace MonthlyBasis\BusinessTest\Service\Task;
 
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
-use LeoGalleguillos\Business\Model\Service as BusinessService;
-use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Service as BusinessService;
+use MonthlyBasis\Business\Model\Table as BusinessTable;
 use MonthlyBasis\String\Model\Service as StringService;
 use MonthlyBasis\User\Model\Entity as UserEntity;
 use PHPUnit\Framework\TestCase;

@@ -1,10 +1,10 @@
 <?php
-namespace LeoGalleguillos\Business;
+namespace MonthlyBasis\Business;
 
-use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
-use LeoGalleguillos\Business\Model\Service as BusinessService;
-use LeoGalleguillos\Business\Model\Table as BusinessTable;
-use LeoGalleguillos\Business\View\Helper as BusinessHelper;
+use MonthlyBasis\Business\Model\Factory as BusinessFactory;
+use MonthlyBasis\Business\Model\Service as BusinessService;
+use MonthlyBasis\Business\Model\Table as BusinessTable;
+use MonthlyBasis\Business\View\Helper as BusinessHelper;
 use MonthlyBasis\Flash\Model\Service as FlashService;
 use MonthlyBasis\String\Model\Service as StringService;
 use MonthlyBasis\String\View\Helper as StringHelper;

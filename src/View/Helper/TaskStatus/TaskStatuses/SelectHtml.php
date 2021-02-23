@@ -1,8 +1,8 @@
 <?php
-namespace LeoGalleguillos\Business\View\Helper\TaskStatus\TaskStatuses;
+namespace MonthlyBasis\Business\View\Helper\TaskStatus\TaskStatuses;
 
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
-use LeoGalleguillos\Business\Model\Service as BusinessService;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Service as BusinessService;
 use MonthlyBasis\String\View\Helper as StringHelper;
 use Laminas\View\Helper\AbstractHelper;
 

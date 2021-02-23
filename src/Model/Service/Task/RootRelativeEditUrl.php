@@ -1,9 +1,9 @@
 <?php
-namespace LeoGalleguillos\Business\Model\Service\Task;
+namespace MonthlyBasis\Business\Model\Service\Task;
 
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
-use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
-use LeoGalleguillos\Business\Model\Service as BusinessService;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Factory as BusinessFactory;
+use MonthlyBasis\Business\Model\Service as BusinessService;
 
 class RootRelativeEditUrl
 {

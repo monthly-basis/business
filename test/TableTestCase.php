@@ -1,5 +1,5 @@
 <?php
-namespace LeoGalleguillos\BusinessTest;
+namespace MonthlyBasis\BusinessTest;
 
 use Laminas\Db\Adapter\Adapter;
 use PHPUnit\Framework\TestCase;

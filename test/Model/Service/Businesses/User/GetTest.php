@@ -1,10 +1,10 @@
 <?php
-namespace LeoGalleguillos\BusinessTest\Model\Entity\Businesses\User;
+namespace MonthlyBasis\BusinessTest\Model\Entity\Businesses\User;
 
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
-use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
-use LeoGalleguillos\Business\Model\Service as BusinessService;
-use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Factory as BusinessFactory;
+use MonthlyBasis\Business\Model\Service as BusinessService;
+use MonthlyBasis\Business\Model\Table as BusinessTable;
 use MonthlyBasis\User\Model\Entity as UserEntity;
 use PHPUnit\Framework\TestCase;
 

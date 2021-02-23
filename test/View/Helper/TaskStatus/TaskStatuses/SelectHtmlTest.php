@@ -1,9 +1,9 @@
 <?php
-namespace LeoGalleguillos\BusinessTest\View\Helper\TaskStatus\TaskStatuses;
+namespace MonthlyBasis\BusinessTest\View\Helper\TaskStatus\TaskStatuses;
 
-use LeoGalleguillos\Business\Model\Entity as BusinessEntity;
-use LeoGalleguillos\Business\Model\Service as BusinessService;
-use LeoGalleguillos\Business\View\Helper as BusinessHelper;
+use MonthlyBasis\Business\Model\Entity as BusinessEntity;
+use MonthlyBasis\Business\Model\Service as BusinessService;
+use MonthlyBasis\Business\View\Helper as BusinessHelper;
 use MonthlyBasis\String\View\Helper as StringHelper;
 use PHPUnit\Framework\TestCase;
 

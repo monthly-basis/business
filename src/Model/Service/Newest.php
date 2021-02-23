@@ -1,9 +1,9 @@
 <?php
-namespace LeoGalleguillos\Business\Model\Service;
+namespace MonthlyBasis\Business\Model\Service;
 
 use Generator;
-use LeoGalleguillos\Business\Model\Factory as BusinessFactory;
-use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use MonthlyBasis\Business\Model\Factory as BusinessFactory;
+use MonthlyBasis\Business\Model\Table as BusinessTable;
 
 class Newest
 {

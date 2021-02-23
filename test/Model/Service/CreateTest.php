@@ -1,8 +1,8 @@
 <?php
-namespace LeoGalleguillos\BusinessTest\Model\Service;
+namespace MonthlyBasis\BusinessTest\Model\Service;
 
-use LeoGalleguillos\Business\Model\Service as BusinessService;
-use LeoGalleguillos\Business\Model\Table as BusinessTable;
+use MonthlyBasis\Business\Model\Service as BusinessService;
+use MonthlyBasis\Business\Model\Table as BusinessTable;
 use MonthlyBasis\String\Model\Service as StringService;
 use PHPUnit\Framework\TestCase;
 
