@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "55a86be4e6f789a187d09811b45aa34a",
+    "content-hash": "fe76573da625807858832f4a9c4650df",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1237,38 +1237,6 @@
                 "zf"
             ],
             "time": "2020-09-14T14:23:00+00:00"
-        },
-        {
-            "name": "leo-galleguillos/re-captcha",
-            "version": "v2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/LeoGalleguillos/ReCaptcha.git",
-                "reference": "21a80f77efb39ec0d658ac872b51d51c1c8b3418"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/ReCaptcha/zipball/21a80f77efb39ec0d658ac872b51d51c1c8b3418",
-                "reference": "21a80f77efb39ec0d658ac872b51d51c1c8b3418",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-test": "^3.1",
-                "monthly-basis/string": "^3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "LeoGalleguillos\\ReCaptcha\\": "src/",
-                    "LeoGalleguillos\\ReCaptchaTest\\": "test/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "abandoned": "monthly-basis/re-captcha",
-            "time": "2020-11-24T06:55:21+00:00"
         },
         {
             "name": "leo-galleguillos/string",
