@@ -6,13 +6,13 @@ use MonthlyBasis\Business\Model\Entity as BusinessEntity;
 
 class Business
 {
-    protected $businessId;
-    protected $created;
-    protected $description;
-    protected $name;
-    protected $userId;
-    protected $views;
-    protected $website;
+    protected int $businessId;
+    protected DateTime $created;
+    protected string $description;
+    protected string $name;
+    protected int $userId;
+    protected int $views;
+    protected string $website;
 
     public function getBusinessId() : int
     {
