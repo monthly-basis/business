@@ -1,48 +1,15 @@
 <?php
 namespace MonthlyBasis\BusinessTest\Model\Table;
 
-use Generator;
 use MonthlyBasis\Business\Model\Table as BusinessTable;
-use MonthlyBasis\BusinessTest\TableTestCase;
-use Laminas\Db\Adapter\Adapter;
-use PHPUnit\Framework\TestCase;
+use MonthlyBasis\LaminasTest\TableTestCase;
 
 class TaskStatusTest extends TableTestCase
 {
-    /**
-     * @var string
-     */
-    protected $sqlPath = __DIR__ . '/../../..' . '/sql/leogalle_test/task_status/';
-
     protected function setUp(): void
     {
-        $configArray     = require($_SERVER['PWD'] . '/config/autoload/local.php');
-        $configArray     = $configArray['db']['adapters']['leogalle_test'];
-        $this->adapter   = new Adapter($configArray);
-        $this->taskStatusTable = new BusinessTable\TaskStatus($this->adapter);
-
-        $this->dropTable();
-        $this->createTable();
-    }
-
-    protected function dropTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'drop.sql');
-        $result = $this->adapter->query($sql)->execute();
-    }
-
-    protected function createTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'create.sql');
-        $result = $this->adapter->query($sql)->execute();
-    }
-
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            BusinessTable\TaskStatus::class,
-            $this->taskStatusTable
-        );
+        $this->dropAndCreateTable('task_status');
+        $this->taskStatusTable = new BusinessTable\TaskStatus($this->getAdapter());
     }
 
     public function testSelectWhereTaskStatusId()

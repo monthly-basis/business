@@ -3,46 +3,15 @@ namespace MonthlyBasis\BusinessTest\Model\Table;
 
 use Generator;
 use MonthlyBasis\Business\Model\Table as BusinessTable;
-use MonthlyBasis\BusinessTest\TableTestCase;
-use Laminas\Db\Adapter\Adapter;
-use PHPUnit\Framework\TestCase;
+use MonthlyBasis\LaminasTest\TableTestCase;
 
 class TaskTest extends TableTestCase
 {
-    /**
-     * @var string
-     */
-    protected $sqlPath = __DIR__ . '/../../..' . '/sql/leogalle_test/task/';
-
     protected function setUp(): void
     {
-        $configArray     = require(__DIR__ . '/../../../config/autoload/local.php');
-        $configArray     = $configArray['db']['adapters']['leogalle_test'];
-        $this->adapter   = new Adapter($configArray);
-        $this->taskTable = new BusinessTable\Task($this->adapter);
+        $this->dropAndCreateTable('task');
 
-        $this->dropTable();
-        $this->createTable();
-    }
-
-    protected function dropTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'drop.sql');
-        $result = $this->adapter->query($sql)->execute();
-    }
-
-    protected function createTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'create.sql');
-        $result = $this->adapter->query($sql)->execute();
-    }
-
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            BusinessTable\Task::class,
-            $this->taskTable
-        );
+        $this->taskTable = new BusinessTable\Task($this->getAdapter());
     }
 
     public function testInsert()
